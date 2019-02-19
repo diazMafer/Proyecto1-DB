@@ -1,0 +1,42 @@
+c:/Users/Mafer/Documents/lab-17-07/bin/Debug/netcoreapp2.0/lab-17-07.deps.json
+c:/Users/Mafer/Documents/lab-17-07/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.json
+c:/Users/Mafer/Documents/lab-17-07/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.dev.json
+c:/Users/Mafer/Documents/lab-17-07/bin/Debug/netcoreapp2.0/lab-17-07.dll
+c:/Users/Mafer/Documents/lab-17-07/bin/Debug/netcoreapp2.0/lab-17-07.pdb
+c:/Users/Mafer/Documents/lab-17-07/obj/Debug/netcoreapp2.0/lab-17-07.csproj.CoreCompileInputs.cache
+c:/Users/Mafer/Documents/lab-17-07/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfoInputs.cache
+c:/Users/Mafer/Documents/lab-17-07/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfo.cs
+c:/Users/Mafer/Documents/lab-17-07/obj/Debug/netcoreapp2.0/lab-17-07.dll
+c:/Users/Mafer/Documents/lab-17-07/obj/Debug/netcoreapp2.0/lab-17-07.pdb
+c:/Users/Mafer/Documents/proyecto1/bin/Debug/netcoreapp2.0/lab-17-07.deps.json
+c:/Users/Mafer/Documents/proyecto1/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.json
+c:/Users/Mafer/Documents/proyecto1/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.dev.json
+c:/Users/Mafer/Documents/proyecto1/bin/Debug/netcoreapp2.0/lab-17-07.dll
+c:/Users/Mafer/Documents/proyecto1/bin/Debug/netcoreapp2.0/lab-17-07.pdb
+c:/Users/Mafer/Documents/proyecto1/obj/Debug/netcoreapp2.0/lab-17-07.csproj.CoreCompileInputs.cache
+c:/Users/Mafer/Documents/proyecto1/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfoInputs.cache
+c:/Users/Mafer/Documents/proyecto1/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfo.cs
+c:/Users/Mafer/Documents/proyecto1/obj/Debug/netcoreapp2.0/lab-17-07.dll
+c:/Users/Mafer/Documents/proyecto1/obj/Debug/netcoreapp2.0/lab-17-07.pdb
+c:/Users/Mafer/Documents/proyecto1-web/bin/Debug/netcoreapp2.0/lab-17-07.deps.json
+c:/Users/Mafer/Documents/proyecto1-web/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.json
+c:/Users/Mafer/Documents/proyecto1-web/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.dev.json
+c:/Users/Mafer/Documents/proyecto1-web/bin/Debug/netcoreapp2.0/lab-17-07.dll
+c:/Users/Mafer/Documents/proyecto1-web/bin/Debug/netcoreapp2.0/lab-17-07.pdb
+c:/Users/Mafer/Documents/proyecto1-web/obj/Debug/netcoreapp2.0/lab-17-07.csprojAssemblyReference.cache
+c:/Users/Mafer/Documents/proyecto1-web/obj/Debug/netcoreapp2.0/lab-17-07.csproj.CoreCompileInputs.cache
+c:/Users/Mafer/Documents/proyecto1-web/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfoInputs.cache
+c:/Users/Mafer/Documents/proyecto1-web/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfo.cs
+c:/Users/Mafer/Documents/proyecto1-web/obj/Debug/netcoreapp2.0/lab-17-07.dll
+c:/Users/Mafer/Documents/proyecto1-web/obj/Debug/netcoreapp2.0/lab-17-07.pdb
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/bin/Debug/netcoreapp2.0/lab-17-07.deps.json
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.json
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/bin/Debug/netcoreapp2.0/lab-17-07.runtimeconfig.dev.json
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/bin/Debug/netcoreapp2.0/lab-17-07.dll
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/bin/Debug/netcoreapp2.0/lab-17-07.pdb
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/obj/Debug/netcoreapp2.0/lab-17-07.csprojAssemblyReference.cache
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/obj/Debug/netcoreapp2.0/lab-17-07.csproj.CoreCompileInputs.cache
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfoInputs.cache
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/obj/Debug/netcoreapp2.0/lab-17-07.AssemblyInfo.cs
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/obj/Debug/netcoreapp2.0/lab-17-07.dll
+/Users/polaris/Documents/5/BASES DE DATOS/templateWeb/obj/Debug/netcoreapp2.0/lab-17-07.pdb

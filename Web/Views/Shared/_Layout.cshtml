@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <head>
+        <meta name="viewport" content="width=device-width, initical-scale=1.0" />
+        <environment include="Development">
+            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+            <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
+
+        </environment>
+    </head>
+    <style>
+        header{
+            height: 20px;
+            background-size: cover;
+        }  
+        header nav{
+        float: right;
+        margin: 30px 30px 0 0;
+        }
+    </style>
+    <body>
+    <header >
+
+        <nav>
+        
+        <a href="Index/#education" class="w3-bar-item w3-button  w3-large ">Education</a>
+        <a href="Index/#achievements" class="w3-bar-item w3-button  w3-large ">Achievements</a>
+        <a href="Index/#work" class="w3-bar-item w3-button  w3-large " >Work Experience</a>
+        <a asp-area="" asp-controller="Home" asp-action="Contact" class="w3-bar-item w3-button  w3-large ">Contact</a>
+        </nav>
+    
+  </header>
+  @RenderBody()
+
+ 
+  </body>
+</html>
