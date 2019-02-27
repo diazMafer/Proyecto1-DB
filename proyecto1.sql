@@ -84,13 +84,13 @@ ORDER BY Razon ASC
 
 SELECT
     Reporting_Airline,
-    (((SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
+    ((((SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
     ((SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) +
     ((SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
-    ((SUM(CASE WHEN Quarter = 1 and "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))) As Growth2017,
+    ((SUM(CASE WHEN Quarter = 1 and "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)))/4)*100 As Growth2017,
     ((((SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)) +
     ((SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)) +
-    ((SUM(CASE WHEN Quarter = 4 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)))/4)*100 As Growth2018
+    ((SUM(CASE WHEN Quarter = 4 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)))/3)*100 As Growth2018,
     ((((SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
     ((SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) +
     ((SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
