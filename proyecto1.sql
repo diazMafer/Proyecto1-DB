@@ -90,7 +90,7 @@ SELECT
     ((SUM(CASE WHEN Quarter = 1 and "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) +
     ((SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)) +
     ((SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)) +
-    ((SUM(CASE WHEN Quarter = 4 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)))/4)*100 as CrecimientoPromedio
+    ((SUM(CASE WHEN Quarter = 4 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)))/7)*100 as CrecimientoPromedio
 FROM ontime ontime_externo
 GROUP BY Reporting_Airline
 ORDER BY CrecimientoPromedio DESC
