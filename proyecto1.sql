@@ -131,11 +131,24 @@ ORDER BY RetrasosAerolineas ASC
     PREGUNTA 10
  */
 
-SELECT Reporting_Airline as Aerolineas, SUM(AirTime) as TiempoEnAire, DistanceGroup
+SELECT Reporting_Airline as Aerolineas,
+SUM(CASE WHEN DistanceGroup = 1 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion1,
+SUM(CASE WHEN DistanceGroup = 2 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion2,
+SUM(CASE WHEN DistanceGroup = 3 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion3,
+SUM(CASE WHEN DistanceGroup = 4 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion4,
+SUM(CASE WHEN DistanceGroup = 5 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion5,
+SUM(CASE WHEN DistanceGroup = 6 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion6,
+SUM(CASE WHEN DistanceGroup = 7 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion7,
+SUM(CASE WHEN DistanceGroup = 8 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion8,
+SUM(CASE WHEN DistanceGroup = 9 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion9,
+SUM(CASE WHEN DistanceGroup = 10 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion10,
+SUM(CASE WHEN DistanceGroup = 11 THEN AirTime ELSE 0 END) as TiempoEnAireClasificacion11
 FROM ontime
-WHERE DistanceGroup =11
 GROUP BY Reporting_Airline
-ORDER BY TiempoEnAire ASC
+ORDER BY (TiempoEnAireClasificacion1 + TiempoEnAireClasificacion2 + TiempoEnAireClasificacion3 +
+TiempoEnAireClasificacion4 + TiempoEnAireClasificacion5 + TiempoEnAireClasificacion6 +
+TiempoEnAireClasificacion7 + TiempoEnAireClasificacion8 + TiempoEnAireClasificacion9 +
+TiempoEnAireClasificacion10 + TiempoEnAireClasificacion11) ASC
 
 
 /* Query anterior dividido en tablas distintas, para mayor orden y facilidad para pasar a html */
