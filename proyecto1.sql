@@ -28,6 +28,16 @@ ORDER BY COUNT(DISTINCT DestStateNm) DESC
     PREGUNTA 3
  */
 
+ /* Para obtener el tiempo que cada vuelo acumulo de adelanto (es decir, que llegaron antes de lo previsto) por cada aerolinea */
+
+SELECT DISTINCT unique_carriers.Description as Aerolinea, abs(SUM(ArrDelay)) as TiempoGanado
+FROM ontime
+JOIN unique_carriers ON unique_carriers.Code = ontime.Reporting_Airline
+WHERE DepDelay = 0 and ArrDelay < 0
+GROUP BY Reporting_Airline
+ORDER BY TiempoGanado DESC
+
+/* Para obtener la cantidad de vuelos que tuvo cada aerolinea por año */
 SELECT DISTINCT unique_carriers.Description as aerolinea, SUM(CASE WHEN "Year"="2017" THEN 1 ELSE 0 END) as "CantidadVuelos2017", SUM(CASE WHEN "Year"="2018" THEN 1 ELSE 0 END) as "CantidadVuelos2018"
 FROM ontime
 INNER JOIN unique_carriers ON unique_carriers.Code = ontime.Reporting_Airline
@@ -234,6 +244,7 @@ FROM ontime
 WHERE DistanceGroup =10
 GROUP BY Reporting_Airline
 ORDER BY TiempoEnAire ASC
+
 SELECT Reporting_Airline as Aerolineas, SUM(AirTime) as TiempoEnAire, DistanceGroup
 FROM ontime
 WHERE DistanceGroup =11
