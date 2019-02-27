@@ -1,0 +1,71 @@
+SELECT  Reporting_Airline,
+				(SUM(CASE WHEN Quarter = 2 AND "Year" = "2018" THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 AND "Year" = "2018" THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 AND "Year" = "2018" THEN 1 ELSE 0 END) AS GR1,
+				(SUM(CASE WHEN Quarter = 3 AND "Year" = "2018" THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 AND "Year" = "2018" THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 AND "Year" = "2018" THEN 1 ELSE 0 END) AS GR2,
+				(SUM(CASE WHEN Quarter = 4 AND "Year" = "2018" THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 AND "Year" = "2018" THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 AND "Year" = "2018" THEN 1 ELSE 0 END) AS GR3
+FROM ontime
+GROUP BY Reporting_Airline
+
+
+SELECT DISTINCT IATA_CODE_Reporting_Airline, COUNT(*)
+FROM ontime
+WHERE Quarter = 1
+
+SELECT DISTINCT IATA_CODE_Reporting_Airline, COUNT(*)
+FROM ontime
+WHERE Quarter = 2
+
+
+SELECT DISTINCT IATA_CODE_Reporting_Airline, COUNT(*)
+FROM ontime
+WHERE Quarter = 3
+
+SELECT DISTINCT IATA_CODE_Reporting_Airline, COUNT(*)
+FROM ontime
+WHERE Quarter = 4
+
+
+
+	(SELECT COUNT(Cancelled) 
+AS busqueda
+FROM ontime 
+WHERE Cancelled=1)
+
+SELECT COUNT(IATA_CODE_Reporting_Airline) as cancelados
+FROM ontime
+WHERE Cancelled=1
+GROUP BY IATA_CODE_Reporting_Airline
+ORDER BY COUNT(IATA_CODE_Reporting_Airline) ASC
+LIMIT 5;
+
+---------------PREGUNTA 1---------------
+SELECT (COUNT(*)*1.0*100)/Cancelados as Porcentaje, Reporting_Airline
+FROM ontime, 
+(
+    SELECT COUNT(*) as Cancelados
+    FROM ontime
+    WHERE Cancelled = 1 and CancellationCode = "A"
+)
+WHERE Cancelled = 1 and CancellationCode = "A"
+GROUP BY Reporting_Airline
+
+-----------------------------------------------
+
+------PREGUNTA 2 -------------------------
+SELECT unique_carriers.Description as aerolinea, COUNT(DISTINCT DestStateNm) as cantidad_estados
+FROM ontime
+INNER JOIN unique_carriers ON IATA_CODE_Reporting_Airline = code
+GROUP BY IATA_CODE_Reporting_Airline
+ORDER BY COUNT(DISTINCT DestStateNm) DESC
+LIMIT 5;
+----------------------------------------
+
+-------PREGUNTA 3----------------------------
+SELECT DISTINCT unique_carriers.Description as aerolinea, COUNT(DISTINCT Flight_Number_Reporting_Airline) as cant_vuelos
+FROM ontime
+INNER JOIN unique_carriers ON unique_carriers.Code = ontime.IATA_CODE_Reporting_Airline
+WHERE DepDelay = 0 and ArrDelay < 0
+GROUP BY IATA_CODE_Reporting_Airline
+ORDER BY COUNT(DISTINCT Flight_Number_Reporting_Airline) DESC
+LIMIT 5;
+-------------------------------------------------
+
