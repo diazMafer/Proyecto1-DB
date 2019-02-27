@@ -84,6 +84,13 @@ ORDER BY Razon ASC
 
 SELECT
     Reporting_Airline,
+    (((SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
+    ((SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) +
+    ((SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
+    ((SUM(CASE WHEN Quarter = 1 and "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))) As Growth2017,
+    ((((SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)) +
+    ((SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)) +
+    ((SUM(CASE WHEN Quarter = 4 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 AND "Year" = '2018' NOT NULL THEN 1 ELSE 0 END)))/4)*100 As Growth2018
     ((((SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 1 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
     ((SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 2 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) +
     ((SUM(CASE WHEN Quarter = 4 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END) - SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END))*1.0/SUM(CASE WHEN Quarter = 3 and "Year" = '2017' NOT NULL THEN 1 ELSE 0 END)) + 
@@ -111,6 +118,21 @@ JOIN (
 ) tabla ON o.DestStateNm = tabla.origen
 GROUP BY Reporting_Airline
 ORDER BY estados DESC
+
+/* Datos en la graficas*/
+SELECT unique_carriers.Description, SUM(CASE WHEN DestStateAbr = "TX" THEN 1 ELSE 0 END) as texas,
+		SUM(CASE WHEN DestStateAbr = "CA" THEN 1 ELSE 0 END) as california,
+		SUM(CASE WHEN DestStateAbr = "FL" THEN 1 ELSE 0 END) as Florida,
+		SUM(CASE WHEN DestStateAbr = "AK" THEN 1 ELSE 0 END) as Alaska,
+		SUM(CASE WHEN DestStateAbr = "MI" THEN 1 ELSE 0 END) as Michigan,
+		SUM(CASE WHEN DestStateAbr = "NY" THEN 1 ELSE 0 END) as NY,
+		SUM(CASE WHEN DestStateAbr = "CO" THEN 1 ELSE 0 END) as Colorado,
+		SUM(CASE WHEN DestStateAbr = "IL" THEN 1 ELSE 0 END) as Illinois,
+		SUM(CASE WHEN DestStateAbr = "NC" THEN 1 ELSE 0 END) as North_Carolina,
+		SUM(CASE WHEN DestStateAbr = "VA" THEN 1 ELSE 0 END) as Virgina
+FROM ontime 
+LEFT JOIN unique_carriers ON ontime.Reporting_Airline = unique_carriers.Code
+GROUP BY Reporting_Airline
 
 /*
     PREGUNTA 9
